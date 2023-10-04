@@ -2,17 +2,25 @@ import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Card from "./Card";
+import { Navigate, useParams } from "react-router-dom";
 
 const CardGallery = ({ data }) => {
+  const [urlCount, setUrlCount] = useState(0);
+  const { id } = useParams();
+
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 6;
 
   useEffect(() => {
+    //For Pagination
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset));
     setPageCount(Math.min(Math.ceil(data.length / itemsPerPage), 10));
+
+    // For URL
+    setUrlCount(id);
   }, [itemOffset, itemsPerPage, data]);
 
   const handlePageClick = (event) => {

@@ -178,7 +178,7 @@ export const data = [
   },
   {
     image:
-      "https://cdn.carbuzz.com/gallery-images/2023-nissan-gt-r-nismo-lateral-view-carbuzz-1022696-1600.jpg",
+      "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2019/08/MY20-GT-R-660.jpg",
     title: "Nissan GT-r",
     year: 2019,
     capacity: 4,
